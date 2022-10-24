@@ -33,7 +33,12 @@ function displayReceipt(totalDue, amountPaid) {
     console.log("Total Due: $" + totalDue);
     console.log("Amount Paid: $" + amountPaid);
     console.log("")
+    if (amountPaid > totalDue) {
     console.log("Change Due: $" + changeDue);
+    }
+    else if (amountPaid < totalDue) {
+        console.log("Amount still owed: $" + -(changeDue));
+    }
 }
 
     let totalDue = 14;
