@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <header>
+            <title>Days Til Go Time</title>
+        </header>
+        <main>
+            <p>Travel Date: <input type="date" id="dateField" />
+            <input id="submitBtn" type="button" value="Submit" /></p>
+            <p id="display"></p>
+            <script>
+                window.onload = init;
+
+                function init() {
+                const submitBtn = document.getElementById("submitBtn");
+                submitBtn.onclick = onsubmitBtnClicked;
+                }
+
+                function onsubmitBtnClicked() {
+                let dateCurrent = new Date();
+                const dateField = document.getElementById("dateField");
+                let dateTravel = new Date(dateField.value);
+                console.log(dateCurrent);
+                console.log(dateTravel);
+                console.log("");
+                
+                let msec_per_day = 1000 * 60 * 60 * 24;
+                let elapsedMilliseconds = Date.parse(dateTravel) - Date.parse(dateCurrent);
+                let dayDiff = elapsedMilliseconds / msec_per_day;   
+                let numDays = Math.ceil(dayDiff);
+                console.log(dateCurrent);
+                console.log(dateTravel);
+                console.log(elapsedMilliseconds);
+                console.log(dayDiff);
+                console.log(numDays);
+
+                const display = document.getElementById("display");
+                display.innerHTML = "Your trip is in " + dayDiff + " days";  
+                }
+
+                
+
+            </script>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>
